@@ -18,10 +18,10 @@ const PlayerScreen = ({ navigation }: RootStackScreenProps<"Player">) => {
 
   const onPressPlay = () => {
     // set default names if names are not set
-    if (!!playerNames.PLAYER_ONE) {
+    if (!playerNames.PLAYER_ONE) {
       updatePlayerNames(PlayerKind.PLAYER_ONE, "Alex");
     }
-    if (!!playerNames.PLAYER_TWO) {
+    if (!playerNames.PLAYER_TWO) {
       updatePlayerNames(PlayerKind.PLAYER_TWO, "John");
     }
     navigation.navigate("GameBoard");
