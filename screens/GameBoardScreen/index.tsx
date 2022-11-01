@@ -102,7 +102,7 @@ const GameBoard = ({ navigation }: RootStackScreenProps<"GameBoard">) => {
             text="REPLAY"
             onPress={() => {
               resetGame();
-              startGame();
+              setTimeout(() => startGame(), 0);
             }}
           />
         )}

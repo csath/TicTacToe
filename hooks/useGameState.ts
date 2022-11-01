@@ -65,7 +65,7 @@ export default function useGameState(singlePlayer: boolean = true): {
     const computerClickedIndex = generateComputerPlayResult(cellState);
     setTimeout(
       () => onCellClick(computerClickedIndex),
-      randomInteger(300, 700)
+      randomInteger(200, 700)
     );
   };
 
