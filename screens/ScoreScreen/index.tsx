@@ -12,13 +12,13 @@ const Scores = () => {
     return (
       <View style={styles.rowContainer}>
         <View style={styles.rankContainer}>
-          <Text style={styles.text}>{index + 1}</Text>
+          <Text style={[styles.text, styles.dimText]}>{index + 1}</Text>
         </View>
         <View style={styles.nameContainer}>
           <Text style={styles.text}>{item.name}</Text>
         </View>
         <View style={styles.resultContainer}>
-          <Text style={styles.text}>{item.winCount}</Text>
+          <Text style={[styles.text, styles.highlightText]}>{item.winCount}</Text>
         </View>
         <View style={styles.resultContainer}>
           <Text style={styles.text}>{item.lostCount}</Text>
@@ -31,16 +31,16 @@ const Scores = () => {
     return (
       <View style={[styles.rowContainer, styles.itemSeperator]}>
         <View style={styles.rankContainer}>
-          <Text style={styles.headerText}></Text>
+          <Text style={styles.headerText}>Rank</Text>
         </View>
         <View style={styles.nameContainer}>
           <Text style={styles.headerText}>Name</Text>
         </View>
         <View style={styles.resultContainer}>
-          <Text style={styles.headerText}>Wins</Text>
+          <Text style={styles.headerText}>Win(s)</Text>
         </View>
         <View style={styles.resultContainer}>
-          <Text style={styles.headerText}>Losses</Text>
+          <Text style={styles.headerText}>Loss(es)</Text>
         </View>
       </View>
     );
@@ -57,10 +57,18 @@ const Scores = () => {
     </View>
   );
 
+  // convert data into an array to feed for Flatlist
   const listData = Object.keys(winHistory).map((e) => ({
     name: e,
     ...winHistory[e],
   }));
+
+  // sort data according to the winRate
+  listData.sort((a, b) => {
+    const aWinRate = (a.winCount / (a.lostCount + a.winCount))
+    const bWinRate = (b.winCount / (b.lostCount + b.winCount))
+    return bWinRate - aWinRate;
+  })
 
   return (
     <View style={styles.container}>

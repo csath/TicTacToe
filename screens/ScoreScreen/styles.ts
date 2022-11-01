@@ -37,6 +37,12 @@ const styles = StyleSheet.create({
     color: Colors.btnTextSecondary,
     fontSize: 16
   },
+  highlightText: {
+    color: Colors.iconColorLight,
+  },
+  dimText: {
+    color: Colors.textDim,
+  },
   headerText: {
     color: Colors.text,
     fontSize: 17
