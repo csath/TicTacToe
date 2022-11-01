@@ -95,3 +95,7 @@ export const AppStateWrapper = (props: any) => {
     </AppContext.Provider>
   );
 };
+
+/*
+TODO: persist winHistory in local storage and load it to state when the app opens
+*/
