@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  text="test"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "height": 208.33333333333334,
+          "justifyContent": "center",
+          "width": 208.33333333333334,
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;
