@@ -33,3 +33,25 @@ export const generateComputerPlayResult = (cellState: CellOccupancy[]): number =
     return getRandomItemFromArray(possibleIndexes);
 }
 
+export const getGameBoardHeaderText = (gameStatus: GameStatus, singlePlayer: boolean, playerNames: PlayerName, currentPlayer: CellOccupancy): string => {
+    let playerName = playerNames[currentPlayer === CellOccupancy.PLAYER_ONE ? PlayerKind.PLAYER_ONE: PlayerKind.PLAYER_TWO];
+    if (singlePlayer && currentPlayer === CellOccupancy.PLAYER_TWO) {
+        playerName = Platform.OS === 'android' ? 'Google' : 'Siri'
+    }
+
+    if (gameStatus === GameStatus.READY) return `Start game\n${playerName} get the first chance!`;
+    if (gameStatus === GameStatus.DRAW) return "It's a draw!";
+    if (gameStatus === GameStatus.ONGOING) {
+        if (singlePlayer && currentPlayer === CellOccupancy.PLAYER_TWO) {
+            return `It's ${Platform.OS === 'android' ? 'Google' : 'Siri'}'s turn`;
+        }
+        return `It's ${playerName}'s turn`;
+    }
+    if (gameStatus === GameStatus.WIN) {
+        if (singlePlayer && currentPlayer === CellOccupancy.PLAYER_TWO) {
+            return `You lost the game!`;
+        }
+        return `${playerName} won the game!`;
+    }
+    return ''
+};
