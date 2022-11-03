@@ -1,8 +1,4 @@
-import {
-  View,
-  Animated,
-  Platform,
-} from "react-native";
+import { View, Animated, Platform } from "react-native";
 import React, { useContext } from "react";
 import styles from "./styles";
 import { PlayerKind, RootStackScreenProps } from "../../types";
@@ -31,7 +27,7 @@ const PlayerScreen = ({ navigation }: RootStackScreenProps<"Player">) => {
     return (
       <View style={styles.headerContainer}>
         <Animated.Image
-          source={require('../../assets/images/icon.png')}
+          source={require("../../assets/images/icon.png")}
           style={[
             styles.headerImage,
             {
@@ -53,12 +49,7 @@ const PlayerScreen = ({ navigation }: RootStackScreenProps<"Player">) => {
             },
           ]}
         />
-        <Animated.Text
-          style={[
-            styles.title,
-            {opacity: timingAnim},
-          ]}
-        >
+        <Animated.Text style={[styles.title, { opacity: timingAnim }]}>
           Tic Tac Toe
         </Animated.Text>
       </View>
@@ -94,7 +85,7 @@ const PlayerScreen = ({ navigation }: RootStackScreenProps<"Player">) => {
 
   const renderButtons = () => {
     return (
-      <Animated.View style={[styles.buttonContainer, {opacity: timingAnim}]}>
+      <Animated.View style={[styles.buttonContainer, { opacity: timingAnim }]}>
         <CustomButton text="LET'S START" onPress={onPressPlay} />
         <CustomButton
           text={

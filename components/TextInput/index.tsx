@@ -17,7 +17,11 @@ const TextInput = ({
   return (
     <View style={styles.container}>
       <Text style={[styles.title, titleStyle]}>{title}</Text>
-      <RNTextInput style={[styles.textInput, style]} placeholderTextColor={Colors.textDim} {...props} />
+      <RNTextInput
+        style={[styles.textInput, style]}
+        placeholderTextColor={Colors.textDim}
+        {...props}
+      />
     </View>
   );
 };

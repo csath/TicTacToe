@@ -1,7 +1,7 @@
 /*
-** This useGameState hook maintain the game state. All the event related to  
-** game data and handling such is handled by this hook.
-*/
+ ** This useGameState hook maintain the game state. All the event related to
+ ** game data and handling such is handled by this hook.
+ */
 
 import { useEffect, useState } from "react";
 import Game from "../constants/Game";

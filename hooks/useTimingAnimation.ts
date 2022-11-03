@@ -1,7 +1,10 @@
-import { useEffect, useRef } from 'react';
-import { Animated } from 'react-native';
+import { useEffect, useRef } from "react";
+import { Animated } from "react-native";
 
-export default function useTimingAnimation(duration: number = 1000): { timingAnim: Animated.Value, restart: () => void } {
+export default function useTimingAnimation(duration: number = 1000): {
+  timingAnim: Animated.Value;
+  restart: () => void;
+} {
   const timingAnim = useRef(new Animated.Value(0)).current;
 
   const animate = () => {
@@ -13,9 +16,9 @@ export default function useTimingAnimation(duration: number = 1000): { timingAni
   };
 
   const restart = () => {
-    timingAnim.setValue(0)
-    animate()
-  }
+    timingAnim.setValue(0);
+    animate();
+  };
 
   useEffect(() => {
     animate();

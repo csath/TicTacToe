@@ -1,15 +1,15 @@
-import { StyleSheet } from 'react-native';
-import Colors from '../../constants/Colors';
+import { StyleSheet } from "react-native";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:Colors.background
+    backgroundColor: Colors.background,
   },
   placeholderContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 100,
   },
   listEmptyContainer: {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   rowContainer: {
     flexDirection: "row",
     padding: 16,
-    minHeight: 40
+    minHeight: 40,
   },
   rankContainer: {
     flex: 1,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.btnTextSecondary,
-    fontSize: 16
+    fontSize: 16,
   },
   highlightText: {
     color: Colors.iconColorLight,
@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: Colors.text,
-    fontSize: 17
-  }
+    fontSize: 17,
+  },
 });
 
 export default styles;

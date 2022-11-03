@@ -18,7 +18,9 @@ const Scores = () => {
           <Text style={styles.text}>{item.name}</Text>
         </View>
         <View style={styles.resultContainer}>
-          <Text style={[styles.text, styles.highlightText]}>{item.winCount}</Text>
+          <Text style={[styles.text, styles.highlightText]}>
+            {item.winCount}
+          </Text>
         </View>
         <View style={styles.resultContainer}>
           <Text style={styles.text}>{item.lostCount}</Text>
@@ -65,10 +67,10 @@ const Scores = () => {
 
   // sort data according to the winRate
   listData.sort((a, b) => {
-    const aWinRate = (a.winCount / (a.lostCount + a.winCount))
-    const bWinRate = (b.winCount / (b.lostCount + b.winCount))
+    const aWinRate = a.winCount / (a.lostCount + a.winCount);
+    const bWinRate = b.winCount / (b.lostCount + b.winCount);
     return bWinRate - aWinRate;
-  })
+  });
 
   return (
     <View style={styles.container}>
